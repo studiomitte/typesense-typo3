@@ -1,0 +1,34 @@
+{
+    "name": "studiomitte/typesense-search",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Georg Ringer",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^12",
+        "php-http/curl-client": "^2",
+        "php-http/httplug": "^2",
+        "symfony/http-client": "^6 || ^7",
+        "vipnytt/sitemapparser": "1.3",
+        "typesense/typesense-php": "v5.0.0-RC1 || ^4"
+    },
+    "autoload": {
+        "psr-4": {
+            "StudioMitte\\TypesenseSearch\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StudioMitte\\TypesenseSearch\\Tests\\": "Tests"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "typesense_search"
+        }
+    }
+}

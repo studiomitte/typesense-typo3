@@ -1,0 +1,29 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  StudioMitte\TypesenseSearch\:
+    resource: '../Classes/*'
+
+  StudioMitte\TypesenseSearch\Configuration\ConfigurationManager:
+    public: true
+
+  StudioMitte\TypesenseSearch\Command\BasicSetupCommand:
+    tags:
+      - name: 'console.command'
+        command: 'typesense:basicSetup'
+        description: 'Basic Setup'
+
+
+  StudioMitte\TypesenseSearch\Command\SitemapFetchCommand:
+    tags:
+      - name: 'console.command'
+        command: 'typesense:sitemap'
+        description: 'Fetch sitemaps'
+
+  StudioMitte\TypesenseSearch\EventListener\RequestProxyEventListener:
+      tags:
+          - name: event.listener
+            identifier: 'typsesense-search/request-proxy-default'

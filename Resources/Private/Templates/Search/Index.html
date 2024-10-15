@@ -1,0 +1,131 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div id="autocomplete"></div>
+<div id="custom"></div>
+<div class="tx_solr">
+
+    <div class="bg-gray-200 custom-overflow">
+        <div class="max-w-screen-2xl m-auto w-full p-5">
+            <div class="lg:flex">
+                <div class="tx-solr-search-form w-full max-w-xl m-auto">
+
+
+                    <div class="tx-solr-search-form">
+                        <div class="relative">
+
+                            <div id="searchbox"></div>
+
+
+                            <!--                                <input type="text" class="bg-white border rounded focus:shadow focus:outline-none h-10 border-0 border-gray-300 p-3 w-full" placeholder="Suchbegriff eingeben" name="tx_solr[q]" value="">-->
+                            <!--                                <button class="absolute pin-r top-0 right-0 h-full pin-t border border-l-0 border-gray-300 p-2 rounded-r flex items-center focus:bg-opacity-50 text-white" type="submit" aria-label="Suchen">-->
+                            <!--                                    <svg class="text-secondary fill-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" focusable="false" role="img"><use xlink:href="/build/sprite.svg#search"></use></svg>-->
+                            <!--                                </button>-->
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+
+
+        </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:flex-wrap mb-4">
+        <div class="searchinfo my-3 md:flex md:w-full justify-between order-2 md:order-1">
+
+
+            <div id="stats"></div>
+
+
+            <div id="hits-per-page">
+            </div>
+
+
+        </div>
+
+        <div class="w-full md:w-1/4 md:pb-0 order-1 md:order-2">
+            <span role="button"
+                  class="block md:hidden pt-3 pb-5 mb-3 m-auto bg-gray-200  text-black text-center font-bold custom-overflow toggle-js"
+                  itemprop="name" title="Suchergebniss Filterung öffnen" data-toggle="search-filter"
+                  data-icon="job-filter-icon" aria-expanded="false">
+                <i id="search-filter-icon" class="icon arrow-down-1 text-primary" aria-hidden="true"></i>
+                <span class="underline">
+                    Suchergebnisse filtern
+                </span>
+            </span>
+
+            <div id="search-filter" class=" hidden md:block">
+                <div id="tx-solr-search-functions">
+
+
+                    <div id="tx-solr-faceting">
+
+
+                        <div id="active-filters"></div>
+                        <div id="clear-filters"></div>
+
+                        <div class="facet-area-main">
+                            <div class="solr-facets-available secondaryContentSection">
+                                <div class="facets d-grid gap-3">
+                                    <f:if condition="{geosearch}">
+                                        <div class="facet facet-type facet-type-options" id="geocode">
+                                            <input id="place"/>
+                                        </div>
+                                    </f:if>
+                                    <div class="facet facet-type facet-type-options" id="dynamic-widgets"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-3/4 md:pl-5 order-3">
+            <div id="tx-solr-search">
+                <div class="results-list list-group" id="hits"></div>
+
+                <div class="solr-pagination">
+                    <nav id="pagination"></nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="search-panel">
+        <div class="search-panel__results">
+
+        </div>
+    </div>
+
+
+</div>
+<f:if condition="{geosearch}">
+<script async="false" defer
+        src="https://maps.googleapis.com/maps/api/js?key=<missing-key>&callback=initMap&libraries=places"></script>
+</f:if>
+
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.75.0"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/typesense-instantsearch-adapter@2/dist/typesense-instantsearch-adapter.min.js"></script>
+
+<f:asset.script identifier="typesens-esearch"
+                data="{profile:profile,host:endpoint.host,protocol:endpoint.protocol,geosearch:geosearch}"
+                src="EXT:typesense_search/Resources/Public/JavaScript/instantSearch.js"/>
+
+</html>

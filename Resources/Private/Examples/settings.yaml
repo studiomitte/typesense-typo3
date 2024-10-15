@@ -1,0 +1,43 @@
+typesense:
+    authentication:
+        apiKey:
+            read: 'Bqu8ylvtpXFRNxtQpbsVeW9CkUC7Uw1H'
+            write: 'ddev'
+
+        host: 'typesense'
+        port: 8108
+        protocol: 'http'
+    profiles:
+        default_de:
+            label: 'Default Search in DE'
+            collection: 'global'
+            searchParameters:
+                query_by: 'title,content'
+                facet_by: 'table'
+                filter_by:
+                    - 'sitelanguage:de'
+        default_en:
+            label: 'Default Search in EN'
+            collection: 'global'
+            searchParameters:
+                query_by: 'title,content'
+                facet_by: 'table'
+                filter_by:
+                    - 'sitelanguage:en'
+        products_de:
+            label: 'Product Search in DE'
+            collection: 'global'
+            searchParameters:
+                query_by: 'title,content'
+                facet_by: 'table,category_string_facet,sd_string_facet,farbe_string_facet,tree\.lvl0,tree\.lvl1'
+                filter_by:
+                    - 'table:tx_products_domain_model_product'
+        news_de:
+            label: 'News Search in DE'
+            collection: 'global'
+            searchParameters:
+                query_by: 'title,content'
+                facet_by: 'table,category_string_facet,sd_string_facet,farbe_string_facet,tree\.lvl0,tree\.lvl1'
+                filter_by:
+                    - 'table:tx_news_domain_model_news'
+

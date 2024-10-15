@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" original="" datatype="plaintext" date="2024-10-10T08:56:21+02:00">
+		<body>
+			<trans-unit id="facet.table.header" resname="facet.table.header">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="facet.table.item.content" resname="facet.table.item.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="facet.table.item.tx_products_domain_model_product" resname="facet.table.item.tx_products_domain_model_product">
+				<source>Products</source>
+			</trans-unit>
+            <trans-unit id="facet.table.item.tx_news_domain_model_news" resname="facet.table.item.tx_news_domain_model_news">
+				<source>News</source>
+			</trans-unit>
+			<trans-unit id="facet.table.item.tx_youcard_domain_model_partner" resname="facet.table.item.tx_youcard_domain_model_partner">
+				<source>Partner</source>
+			</trans-unit>
+			<trans-unit id="facet.sd_string_facet.header" resname="facet.sd_string_facet.header">
+				<source>SD Wert</source>
+			</trans-unit>
+			<trans-unit id="facet.uv_string_facet.header" resname="facet.uv_string_facet.header">
+				<source>UV</source>
+			</trans-unit>
+			<trans-unit id="facet.rs_string_facet.header" resname="facet.rs_string_facet.header">
+				<source>RS</source>
+			</trans-unit>
+			<trans-unit id="facet.category_string_facet.header" resname="facet.category_string_facet.header">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="facet.farbe_string_facet.header" resname="facet.farbe_string_facet.header">
+				<source>Color</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

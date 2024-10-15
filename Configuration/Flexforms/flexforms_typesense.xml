@@ -1,0 +1,79 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Settings</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.profile>
+                        <TCEforms>
+                            <label>Profile</label>
+                            <config>
+                                <type>select</type>
+                                <itemsProcFunc>StudioMitte\TypesenseSearch\Backend\ItemsProcFunc->getAllProfilesOfSite</itemsProcFunc>
+                                <renderType>selectSingle</renderType>
+                                <items>
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0"></numIndex>
+                                        <numIndex index="1"></numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.profile>
+                    <settings.queryBy>
+                        <TCEforms>
+                            <label>Query By</label>
+                            <config>
+                                <type>select</type>
+                                <itemsProcFunc>StudioMitte\TypesenseSearch\Backend\ItemsProcFunc->getQueryByFieldsOfCollection</itemsProcFunc>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <size>10</size>
+                                <default>title,content</default>
+                                <items>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">special</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">embedding</numIndex>
+                                        <numIndex index="1">embedding</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">default</numIndex>
+                                        <numIndex index="1">--div--</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </settings.queryBy>
+                    <settings.facetBy>
+                        <TCEforms>
+                            <label>Facet Fields</label>
+                            <config>
+                                <type>select</type>
+                                <itemsProcFunc>StudioMitte\TypesenseSearch\Backend\ItemsProcFunc->getAllFacetFieldsOfCollection</itemsProcFunc>
+                                <renderType>selectMultipleSideBySide</renderType>
+                                <size>10</size>
+                            </config>
+                        </TCEforms>
+                    </settings.facetBy>
+                    <settings.languageFiles>
+                        <TCEforms>
+                            <label>Language file</label>
+                            <description>Path to the language files, one per line</description>
+                            <config>
+                                <type>text</type>
+                                <placeholder>EXT:typesense_search/Resources/Private/Language/locallang_js.xlf</placeholder>
+                                <default>EXT:typesense_search/Resources/Private/Language/locallang_js.xlf</default>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </settings.languageFiles>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>
